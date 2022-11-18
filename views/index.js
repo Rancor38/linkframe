@@ -7,7 +7,7 @@ const page = document.querySelectorAll('page')
 //create a function that loads child elements into the index.html
 const gatherElements = () => {
     for (let i = 0; i < pages.length; i++) {
-        fetch(`views/${pages[i]}.html`)
+        fetch(`/${pages[i]}.html`)
         .then(res => res.text())
             .then(data => {
                 htmlContent.push(data)

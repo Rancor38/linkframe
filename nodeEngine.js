@@ -5,12 +5,11 @@ const app = express();
 const path = require("path");
 const router = express.Router()
 
-app.use(express.static('engine'));
-app.use('../scripts', express.static('scripts'));
-
+app.use(express.static('static'));
+app.use(express.static('views'));
 
 app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: __dirname });
+    res.sendFile('./index.html', { root: __dirname });
 });
 
 const hostname = '127.0.0.1';

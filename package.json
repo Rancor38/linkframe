@@ -1,10 +1,10 @@
 {
-  "name": "html-linker",
+  "name": "linkframe",
   "version": "1.0.0",
   "description": "",
   "main": "./engine/nodeEngine.js",
   "scripts": {
-    "start": "node ./engine/nodeEngine.js",
+    "start": "node nodeEngine.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
