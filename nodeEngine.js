@@ -1,10 +1,20 @@
 const http = require('http');
 
 const express = require('express');
-const app = express();
-const path = require("path");
-const router = express.Router()
 
+const livereload = require("livereload")
+const connectLiveReload = require("connect-livereload")
+
+const liveReloadServer = livereload.createServer()
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/")
+  }, 100)
+})
+
+const app = express();
+
+app.use(connectLiveReload())
 
 app.use(express.static('static'));
 
@@ -22,7 +32,7 @@ app.get('/pth', function (req, res) {
 });
 
 const hostname = '127.0.0.1';
-const port = process.env.port || 4000;
+const port = process.env.port || 3500;
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);

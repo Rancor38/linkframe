@@ -12,6 +12,8 @@ const gatherElements = () => {
             .then(res => res.text())
                 .then(data => {
                     htmlContent.push(data)
+                })
+                .then(data => {
                     body.appendChild(page.cloneNode(true))
                 })
                 .then(data => {
