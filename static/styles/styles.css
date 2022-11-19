@@ -1,15 +1,31 @@
-.a-nav.html {
+.a-nav {
     background-color: black;
     color: white;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     max-height: fit-content;
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
 img {
     filter: invert();
     width: 4rem;
     margin: 0px;
+}
+
+.b-body {
+    border: outset grey 5px;
+    background-color: aliceblue;
+    height: 70vh;
+}
+
+.c-footer {
+    background-color: black;
+    color: white;
+    height: 2rem;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
