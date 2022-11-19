@@ -4,7 +4,7 @@
   "description": "",
   "main": "./engine/nodeEngine.js",
   "scripts": {
-    "start": "nodemon nodeEngine.js",
+    "start": "nodemon nodeEngine.js --watch static",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

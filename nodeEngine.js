@@ -16,7 +16,6 @@ const fs = require('fs');
 let files = fs.readdirSync('static/pages/');
 files.forEach((file) => {
   pathName.push(file);
-  console.log(pathName)
 });
 app.get('/pth', function (req, res) {
   res.send(pathName)
