@@ -1,0 +1,15 @@
+.a-nav.html {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: fit-content;
+    font-size: 3rem;
+}
+
+img {
+    filter: invert();
+    width: 4rem;
+    margin: 0px;
+}

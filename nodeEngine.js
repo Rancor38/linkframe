@@ -9,17 +9,16 @@ const liveReloadServer = livereload.createServer()
 liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/")
-  }, 100)
+  }, 10)
 })
 
 const app = express();
 
-app.use(connectLiveReload())
 
 app.use(express.static('static'));
 
 app.get('/', function (req, res) {
-    res.sendFile('./index.html', { root: __dirname });
+  res.sendFile('./index.html', { root: __dirname });
 });
 let pathName = []
 const fs = require('fs');
@@ -30,6 +29,8 @@ files.forEach((file) => {
 app.get('/pth', function (req, res) {
   res.send(pathName)
 });
+
+app.use(connectLiveReload())
 
 const hostname = '127.0.0.1';
 const port = process.env.port || 3500;

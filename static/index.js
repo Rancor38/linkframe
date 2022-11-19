@@ -2,7 +2,7 @@
 let pages = []
 /* <-- The buisiness logic of loading the html pages into the index.js --> */
 let htmlContent = []
-const page = document.createElement('page')
+const page = document.createElement('div')
 const body = document.body
 //create a function that loads child elements into the index.html
 const gatherElements = () => {
@@ -17,7 +17,10 @@ const gatherElements = () => {
                     body.appendChild(page.cloneNode(true))
                 })
                 .then(data => {
-                    document.querySelectorAll('page')[i].innerHTML = htmlContent[i]
+                    if (document.querySelectorAll('div')[i]) {
+                        document.querySelectorAll('div')[i].innerHTML = htmlContent[i]
+                        document.querySelectorAll('div')[i].classList = pages[i].slice(0, pages[i].indexOf('.'))
+                    }
             })
         } 
     }
