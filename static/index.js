@@ -1,9 +1,9 @@
-/* <-- To add a new html view, create a new html document into the './views' folder, and list the name of the file inside of the pages array below. --> */
+/* <-- To add a new html view, create a new html document into the './pages' folder --> */
 let pages = []
-
 /* <-- The buisiness logic of loading the html pages into the index.js --> */
 let htmlContent = []
-const page = document.querySelectorAll('page')
+const page = document.createElement('page')
+const body = document.body
 //create a function that loads child elements into the index.html
 const gatherElements = () => {
     if (pages.length) {
@@ -12,10 +12,10 @@ const gatherElements = () => {
             .then(res => res.text())
                 .then(data => {
                     htmlContent.push(data)
-                    // console.log(`page at i is ${page[i]}`)
-                    // console.log(`html Content i is ${htmlContent[i]}`)
-                    page[i].innerHTML = htmlContent[i]
-                    // console.log(`page i is ${page[i]}`)
+                    body.appendChild(page.cloneNode(true))
+                })
+                .then(data => {
+                    document.querySelectorAll('page')[i].innerHTML = htmlContent[i]
             })
         } 
     }
