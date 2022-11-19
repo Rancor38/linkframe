@@ -5,11 +5,21 @@ const app = express();
 const path = require("path");
 const router = express.Router()
 
+
 app.use(express.static('static'));
-app.use(express.static('views'));
 
 app.get('/', function (req, res) {
     res.sendFile('./index.html', { root: __dirname });
+});
+let pathName = []
+const fs = require('fs');
+let files = fs.readdirSync('static/pages/');
+files.forEach((file) => {
+  pathName.push(file);
+  console.log(pathName)
+});
+app.get('/pth', function (req, res) {
+  res.send(pathName)
 });
 
 const hostname = '127.0.0.1';
