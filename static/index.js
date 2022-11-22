@@ -1,3 +1,5 @@
+import app from "./scripts/app"
+
 /* <-- To add a new html view, create a new html document into the './pages' folder --> */
 let pages = []
 /* <-- The buisiness logic of loading the html pages into the index.js --> */
@@ -20,6 +22,7 @@ const gatherElements = () => {
                     if (document.querySelectorAll('div')[i]) {
                         document.querySelectorAll('div')[i].innerHTML = htmlContent[i]
                         document.querySelectorAll('div')[i].classList = pages[i].slice(0, pages[i].indexOf('.'))
+                        app()
                     }
             })
         } 
