@@ -31,11 +31,10 @@ app.get('/pth', function (req, res) {
 });
 
 
-// const hostname = '127.0.0.1';
-const hostname = '0.0.0.0';
-const port = process.env.port || 3500;
+const hostname = '127.0.0.1';
+const PORT = process.env.port || 3500;
 
-app.listen(port, hostname, () => {
+app.listen(PORT, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 
