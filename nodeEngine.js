@@ -31,11 +31,10 @@ app.get('/pth', function (req, res) {
 });
 
 
-const hostname = '127.0.0.1';
-const PORT = process.env.port || 3500;
+const PORT = 3500
 
-app.listen(PORT, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(process.env.PORT || PORT, () => {
+  console.log(`Server running at: ${PORT}`);
 });
 
 app.use(connectLiveReload())
