@@ -1,4 +1,4 @@
-import app from "./scripts/app"
+import app from './scripts/app.js'
 
 /* <-- To add a new html view, create a new html document into the './pages' folder --> */
 let pages = []
@@ -22,17 +22,19 @@ const gatherElements = () => {
                     if (document.querySelectorAll('div')[i]) {
                         document.querySelectorAll('div')[i].innerHTML = htmlContent[i]
                         document.querySelectorAll('div')[i].classList = pages[i].slice(0, pages[i].indexOf('.'))
-                        app()
                     }
-            })
+                })
         } 
     }
 }
+
+
 /* <-- getting a dynamic list of the folders contained within /pages/ --> */
 const getDynaPath = () => {
     fetch(`/pth`)
         .then(res => res.json())
         .then(data => pages = data)
         .then(gatherElements)
+        .then(app())
 }
 getDynaPath()

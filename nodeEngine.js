@@ -2,15 +2,15 @@ const http = require('http');
 
 const express = require('express');
 
-// const livereload = require("livereload")
-// const connectLiveReload = require("connect-livereload")
+const livereload = require("livereload")
+const connectLiveReload = require("connect-livereload")
 
-// const liveReloadServer = livereload.createServer()
-// liveReloadServer.server.once("connection", () => {
-//   setTimeout(() => {
-//     liveReloadServer.refresh("/")
-//   }, 10)
-// })
+const liveReloadServer = livereload.createServer()
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/")
+  }, 10)
+})
 
 const app = express();
 
@@ -37,4 +37,4 @@ app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running at: ${PORT}`);
 });
 
-// app.use(connectLiveReload())
+app.use(connectLiveReload())
